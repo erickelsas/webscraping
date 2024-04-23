@@ -1,16 +1,17 @@
 import fastify from "fastify";
 import * as cheerio from 'cheerio'
+import axios from "axios";
 
 const app = fastify();
 
-const rp = require('request-promise');
+
 
 app.get('/', (req, res) => {
     const url = 'http://bianca.com/';
 
-    rp(url)
+    axios(url)
     .then((html: any) => {
-        const $ = cheerio.load(html)
+        const $ = cheerio.load(html.data)
         res.status(200).send({ "h1":$("h1").text() })
     })
     .catch((err: any) => {
