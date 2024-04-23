@@ -1,0 +1,27 @@
+{
+  "name": "webscraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --format esm",
+    "start": "node dist/server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.3",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fastify": "^4.26.2",
+    "puppeteer": "^22.7.0",
+    "request-promise": "^4.2.6"
+  }
+}
